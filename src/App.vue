@@ -1,67 +1,39 @@
 <template>
-    <Nav/>
-<!--  <Login/>-->
+<!--  <nav>-->
+<!--&lt;!&ndash;    <router-link to="/">The Gluck</router-link> |&ndash;&gt;-->
+<!--&lt;!&ndash;    <router-link to="/about">About</router-link>&ndash;&gt;-->
+<!--  </nav>-->
+  <Nav/>
   <router-view/>
+  <Footer/>
 </template>
+
 <style>
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
-.form-signin .checkbox {
-  font-weight: 400;
+
+nav {
+  padding: 30px;
 }
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
 <script>
-import Nav from "../components/Nav";
-// import Login from "../views/Login";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 export default {
-  components: {Nav}
+  components: {Footer, Nav}
 }
-
-
 </script>
-
-<!--<script>-->
-<!--import HelloWorld from './components/HelloWorld.vue'-->
-
-<!--export default {-->
-<!--  name: 'App',-->
-<!--  components: {-->
-<!--    HelloWorld-->
-<!--  }-->
-<!--}-->
-<!--</script>-->
-
-<!--<style>-->
-<!--#app {-->
-<!--  font-family: Avenir, Helvetica, Arial, sans-serif;-->
-<!--  -webkit-font-smoothing: antialiased;-->
-<!--  -moz-osx-font-smoothing: grayscale;-->
-<!--  text-align: center;-->
-<!--  color: #2c3e50;-->
-<!--  margin-top: 60px;-->
-<!--}-->
-<!--</style>-->

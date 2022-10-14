@@ -1,7 +1,13 @@
 <template>
   <form class="form-signin">
     <!--    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputEmail" class="sr-only">First name</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="First name" required autofocus>
+    <label for="inputEmail" class="sr-only">Last name</label>
+    <input type="text" id="inputEmail" class="form-control" placeholder="Last name" required autofocus>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
@@ -14,6 +20,10 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Login"
+  name: "Signup"
 }
 </script>
+
+<style scoped>
+
+</style>
