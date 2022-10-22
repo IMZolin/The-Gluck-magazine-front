@@ -1,8 +1,4 @@
 <template>
-<!--  <nav>-->
-<!--&lt;!&ndash;    <router-link to="/">The Gluck</router-link> |&ndash;&gt;-->
-<!--&lt;!&ndash;    <router-link to="/about">About</router-link>&ndash;&gt;-->
-<!--  </nav>-->
   <Nav/>
   <router-view/>
   <Footer/>
