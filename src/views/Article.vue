@@ -1,6 +1,7 @@
 <template>
   <main>
     <div>
+      <div class="scroll-line"></div>
       <h1>Smooth Scrolling Sticky ScrollSpy Navigation</h1>
       <p><em>Want an explanation of how this works?<br />&rarr; <a href="https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/" target="_top">https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/</a></em></p>
       <section id="introduction">
@@ -93,30 +94,57 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Article"
 }
-window.addEventListener('DOMContentLoaded', () => {
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-      } else {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-      }
-    });
-  });
-
-  // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {
-    observer.observe(section);
-  });
-
-});
+// eslint-disable-next-line no-undef
+// $(window).scroll(function(){
+//   // eslint-disable-next-line no-undef
+//   var wintop, docheight, winheight;
+//   // eslint-disable-next-line no-undef
+//   wintop = $(window).scrollTop();
+//   // eslint-disable-next-line no-undef
+//   docheight = $(document).height();
+//   // eslint-disable-next-line no-undef
+//   winheight = $(window).height();
+//   var scrolled = (wintop/(docheight-winheight))*100;
+//
+//   // eslint-disable-next-line no-undef
+//   $('.scroll-line').css('width', (scrolled + '%'));
+// });
+// window.addEventListener('DOMContentLoaded', () => {
+//
+//   const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       const id = entry.target.getAttribute('id');
+//       if (entry.intersectionRatio > 0) {
+//         document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+//       } else {
+//         document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+//       }
+//     });
+//   });
+//
+//   // Track all sections that have an `id` applied
+//   document.querySelectorAll('section[id]').forEach((section) => {
+//     observer.observe(section);
+//   });
+//
+// });
 </script>
 
 <style scoped>
+/* 1. Enable smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+.scroll-line{
+  height: 2px;
+  margin-bottom: -2px;
+  background: blue;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
 }
 
 /* 2. Make nav sticky */
