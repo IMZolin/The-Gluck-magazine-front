@@ -72,7 +72,7 @@ export default {
     const router = useRouter();
     // eslint-disable-next-line no-unused-vars
     const submit = async() =>{
-      await axios.post('http://localhost:8080/api/login',data, {withCredentials:true});
+      await axios.post('http://localhost:8080/api/login',data);
       axios.defaults.headers.common['Authorization'] = 'Bearer ${response.data}';
       await router.push('/');
     }
