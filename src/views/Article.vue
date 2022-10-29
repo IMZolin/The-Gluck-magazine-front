@@ -2,52 +2,52 @@
   <main>
     <div>
       <div class="scroll-line"></div>
-      <h1>Smooth Scrolling Sticky ScrollSpy Navigation</h1>
-      <p><em>Want an explanation of how this works?<br />&rarr; <a href="https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/" target="_top">https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/</a></em></p>
+      <h1>Example article</h1>
+<!--      <p><em>Want an explanation of how this works?<br />&rarr; <a href="https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/" target="_top">https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/</a></em></p>-->
       <section id="introduction">
-        <h2>Introduction</h2>
+        <h2>Chapter 1</h2>
         <p>…</p>
       </section>
-      <section id="request-response">
+<!--      <section id="request-response">
         <h2>Request &amp; Response</h2>
         <p>…</p>
-      </section>
+      </section>-->
       <section id="authentication">
-        <h2>Authentication</h2>
+        <h2>Chapter 2</h2>
         <p>…</p>
       </section>
       <section id="endpoints">
-        <h2>Endpoints</h2>
+        <h2>Chapter 3</h2>
         <section id="endpoints--root">
           <h3>Root</h3>
           <p>…</p>
         </section>
         <section id="endpoints--cities-overview">
-          <h3>Cities Overview</h3>
+          <h3>Chapter 4</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-detail">
-          <h3>City Detail</h3>
+          <h3>Chapter 5</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-config">
-          <h3>City Config</h3>
+          <h3>Chapter 6</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-spots-overview">
-          <h3>City Spots Overview</h3>
+          <h3>Chapter 7</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-spot-detail">
-          <h3>City Spot Detail</h3>
+          <h3>Chapter 8</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-icons-overview">
-          <h3>City Icons Overview</h3>
+          <h3>Chapter 9</h3>
           <p>…</p>
         </section>
         <section id="endpoints--city-icon-detail">
-          <h3>City Icon Detail</h3>
+          <h3>Chapter 10</h3>
           <p>…</p>
         </section>
       </section>
@@ -66,19 +66,18 @@
     </div>
     <nav class="section-nav">
       <ol>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#request-response">Request &amp; Response</a></li>
-        <li><a href="#authentication">Authentication</a></li>
-        <li><a href="#endpoints">Endpoints</a>
+        <li><a href="#introduction">Chapter 1</a></li>
+        <li><a href="#authentication">Chapter 2</a></li>
+        <li><a href="#endpoints">Chapter 3</a>
           <ul>
-            <li class=""><a href="#endpoints--root">Root</a></li>
-            <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
-            <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
-            <li class=""><a href="#endpoints--city-config">City Config</a></li>
-            <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
-            <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
-            <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
-            <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
+            <li class=""><a href="#endpoints--root">Chapter 3.1</a></li>
+            <li class=""><a href="#endpoints--cities-overview">Chapter 3.2</a></li>
+            <li class=""><a href="#endpoints--city-detail">Chapter 3.3</a></li>
+            <li class=""><a href="#endpoints--city-config">Chapter 3.4</a></li>
+            <li class=""><a href="#endpoints--city-spots-overview">Chapter 3.5</a></li>
+            <li class=""><a href="#endpoints--city-spot-detail">Chapter 3.6</a></li>
+            <li class=""><a href="#endpoints--city-icons-overview">Chapter 3.7</a></li>
+            <li class=""><a href="#endpoints--city-icon-detail">Chapter 3.8</a></li>
           </ul>
         </li>
         <li class=""><a href="#links">Links</a></li>

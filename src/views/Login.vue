@@ -7,6 +7,7 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input v-model="data.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <router-link class="signup-link" href="#" to="/signup">Create a new account</router-link>
   </form>
 </template>
 
@@ -55,10 +56,9 @@
 <script>
 
 
-import {reactive} from "vue";
 import {useRouter} from "vue-router";
+import {reactive} from "vue";
 import axios from "axios";
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Login",
@@ -72,7 +72,7 @@ export default {
     const router = useRouter();
     // eslint-disable-next-line no-unused-vars
     const submit = async() =>{
-      await axios.post('http://localhost:8080/api/login',data);
+      await axios.post('http://localhost:8080/api/auth/login',data);
       axios.defaults.headers.common['Authorization'] = 'Bearer ${response.data}';
       await router.push('/');
     }

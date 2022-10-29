@@ -30,6 +30,12 @@ nav a.router-link-exact-active {
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 export default {
-  components: {Footer, Nav}
+  components: {Footer, Nav},
+  computed: {
+    $store: "/store",
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
+  }
 }
 </script>

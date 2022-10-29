@@ -2,9 +2,6 @@
   <div class="container">
     <header class="blog-header lh-1 py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
-<!--        <div class="col-4 pt-1">-->
-<!--          <a class="link-secondary" href="#">Subscribe</a>-->
-<!--        </div>-->
         <div class="col-4 text-center">
           <router-link to="/" class="blog-header-logo text-dark" href="#">The Gluck</router-link>
         </div>
@@ -12,8 +9,26 @@
           <a class="link-secondary" href="#" aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
           </a>
-          <router-link to="/login" class="btn btn-sm btn-outline-secondary" href="#">Login</router-link>
-          <router-link to="/signup" class="btn btn-sm btn-outline-secondary" href="#">Sign up</router-link>
+          <div class="navbar-nav ml-auto">
+            <div v-if="!currentUser" style="display: inline-block">
+              <router-link to="/login" class="btn btn-sm btn-outline-secondary" href="#">Login</router-link>
+              <router-link to="/signup" class="btn btn-sm btn-outline-secondary" href="#">Sign up</router-link>
+            </div>
+          </div>
+          <div v-if="currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <router-link to="/profile" class="nav-link">
+                <font-awesome-icon icon="user" />
+                username
+<!--                {{ currentUser.username }}-->
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href @click.prevent="">
+                <font-awesome-icon icon="sign-out-alt" />Log out
+              </a>
+            </li>
+          </div>
         </div>
       </div>
     </header>
@@ -80,8 +95,12 @@ h1, h2, h3, h4, h5, h6 {
 </style>
 
 <script>
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Nav"
+  name: "Nav",
+  currentUser() {
+    return this.$store.state.auth.user;
+  }
 }
 </script>
