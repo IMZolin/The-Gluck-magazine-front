@@ -7,7 +7,8 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input v-model="data.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <router-link class="signup-link" href="#" to="/signup">Create a new account</router-link>
+    <router-link class="signup-link" href="#" to="/signup">Create a new account</router-link><br>
+    <router-link to="/forgot-password" class="signup-link" href="#">Forgot password ?</router-link>
   </form>
 </template>
 
@@ -17,17 +18,14 @@
   padding: 15px;
   margin:auto;
 }
-
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
@@ -38,24 +36,19 @@
     font-size: 3rem;
   }
 }
-
 .flex-auto {
   flex: 0 0 auto;
 }
-
 .h-250 { height: 250px; }
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
 }
-
 /* Pagination */
 .blog-pagination {
   margin-bottom: 4rem;
 }
 </style>
 <script>
-
-
 import {useRouter} from "vue-router";
 import {reactive} from "vue";
 import axios from "axios";
@@ -72,8 +65,8 @@ export default {
     const router = useRouter();
     // eslint-disable-next-line no-unused-vars
     const submit = async() =>{
-      await axios.post('http://localhost:8080/api/auth/login',data);
-      axios.defaults.headers.common['Authorization'] = 'Bearer ${response.data}';
+      await axios.post('http://localhost:8080/api/login',data);
+      axios.defaults.headers.common['Authorization'] = 'Bearer ${response.data.token}';
       await router.push('/');
     }
     return{

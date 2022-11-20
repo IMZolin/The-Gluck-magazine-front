@@ -2,7 +2,7 @@
   <main class="container">
     <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic">Hello</h1>
+        <h1 class="display-4 fst-italic">Hello {{message}}</h1>
         <p class="lead my-3">The slogan of The Gluck magazine</p>
       </div>
     </div>
@@ -22,14 +22,30 @@
 
 <script>
 import Card from "./../components/Card";
+import axios from "axios";
+import {onMounted,ref} from "vue";
+
 export default {
   components: {Card},
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Main"
+  name: "Main",
+  setup(){
+    const message = ref('No User');
+    onMounted(async()=>{
+      const {data} = await axios.get('http://localhost:8080/api/user');
+      message.value = data.first_name;
+    });
+    return{
+      message
+    }
+  }
 }
 </script>
 
 <style scoped>
+/*.container{
+  top:10%;
+}*/
 /*.card-img-top{*/
 /*  text-align: center;*/
 /*}*/

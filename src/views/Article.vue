@@ -106,7 +106,7 @@ export default {
 //   var scrolled = (wintop/(docheight-winheight))*100;
 //
 //   // eslint-disable-next-line no-undef
-//   $('.scroll-line').css('width', (scrolled + '%'));
+//   $('.scroll-line').editor('width', (scrolled + '%'));
 // });
 // window.addEventListener('DOMContentLoaded', () => {
 //

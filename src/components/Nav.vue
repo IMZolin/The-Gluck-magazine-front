@@ -2,6 +2,9 @@
   <div class="container">
     <header class="blog-header lh-1 py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
+        <!--        <div class="col-4 pt-1">-->
+        <!--          <a class="link-secondary" href="#">Subscribe</a>-->
+        <!--        </div>-->
         <div class="col-4 text-center">
           <router-link to="/" class="blog-header-logo text-dark" href="#">The Gluck</router-link>
         </div>
@@ -9,25 +12,13 @@
           <a class="link-secondary" href="#" aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
           </a>
-          <div class="navbar-nav ml-auto">
-            <div v-if="!currentUser" style="display: inline-block">
-              <router-link to="/login" class="btn btn-sm btn-outline-secondary" href="#">Login</router-link>
-              <router-link to="/signup" class="btn btn-sm btn-outline-secondary" href="#">Sign up</router-link>
-            </div>
+          <div>
+            <router-link to="/login" class="btn btn-sm btn-outline-secondary" href="#">Login</router-link>
+            <router-link to="/signup" class="btn btn-sm btn-outline-secondary" href="#">Sign up</router-link>
           </div>
-          <div v-if="currentUser" class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <router-link to="/profile" class="nav-link">
-                <font-awesome-icon icon="user" />
-                username
-<!--                {{ currentUser.username }}-->
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href @click.prevent="">
-                <font-awesome-icon icon="sign-out-alt" />Log out
-              </a>
-            </li>
+          <div style="display: none">
+            <router-link to="/profile" class="btn btn-sm btn-outline-secondary" href="#">Username</router-link>
+            <router-link to="/logout" class="btn btn-sm btn-outline-secondary" href="#">Logout</router-link>
           </div>
         </div>
       </div>
@@ -53,19 +44,29 @@
 </template>
 
 <style>
+
+/*header{
+  position: fixed;
+  z-index: 10;
+  background: white;
+  width: 60%
+}
+.nav-scroller{
+  position: absolute;
+  top:5%;
+  text-align: center;
+}*/
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
 }
-
 .blog-header-logo {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
+  color: #FFFF66;
 }
-
 .blog-header-logo:hover {
   text-decoration: none;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
@@ -77,30 +78,52 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3rem;
   }
 }
-
 .flex-auto {
   flex: 0 0 auto;
 }
-
 .h-250 { height: 250px; }
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
 }
-
 /* Pagination */
 .blog-pagination {
   margin-bottom: 4rem;
 }
-
 </style>
 
 <script>
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Nav",
-  currentUser() {
-    return this.$store.state.auth.user;
-  }
+  name: "Nav"
+  /*methods: {
+    checkScreen() {
+      this.windownWidth = window.innerWidth;
+      if (this.windownWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+
+    toggleProfileMenu(e) {
+      if (e.target === this.$refs.profile) {
+        this.profileMenu = !this.profileMenu;
+      }
+    },
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    admin() {
+      return this.$store.state.profileAdmin;
+    },
+  },*/
 }
 </script>

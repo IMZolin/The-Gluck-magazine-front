@@ -1,7 +1,7 @@
 <template>
-  <Nav/>
-  <router-view/>
-  <Footer/>
+    <Nav />
+    <router-view/>
+    <Footer />
 </template>
 
 <style>
@@ -36,6 +36,26 @@ export default {
     currentUser() {
       return this.$store.state.auth.user;
     }
-  }
+  },
+  data() {
+    return {
+      navigation: null,
+    };
+  },
+  mounted() {},
+  methods: {
+    checkRoute() {
+      if (this.$route.name === "Login" || this.$route.name === "Register" || this.$route.name === "ForgotPassword") {
+        this.navigation = true;
+        return;
+      }
+      this.navigation = false;
+    },
+  },
+  watch: {
+    $route() {
+      this.checkRoute();
+    },
+  },
 }
 </script>
