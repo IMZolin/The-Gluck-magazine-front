@@ -13,7 +13,7 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input v-model="data.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <label for="inputPassword" class="sr-only">Confirm password</label>
-    <input v-model="data.passwordConfirm" type="password" id="inputPassword" class="form-control" placeholder="Confirm password" required>
+    <input v-model="data.password_confirm" type="password" id="inputPassword" class="form-control" placeholder="Confirm password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     <router-link to="/login" class="signup-link" href="#">Already have an account</router-link>
   </form>
@@ -35,13 +35,13 @@ export default {
       last_name:'',
       email:'',
       password:'',
-      passwordConfirm:''
+      password_confirm:''
     });
     // eslint-disable-next-line no-unused-vars
     const router = useRouter();
     // eslint-disable-next-line no-unused-vars
     const submit = async() =>{
-      await axios.post('http://localhost:8080/api/auth/signup',data);
+      await axios.post('http://localhost:8080/api/signup',data);
       await router.push('/login');
     }
     return{

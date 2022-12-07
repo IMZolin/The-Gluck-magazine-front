@@ -9,6 +9,7 @@ const pdfBtn = document.querySelector("#pdf-btn")
 
 const content = document.querySelector("#content")
 const filename = document.querySelector("#filename-input")
+
 boldBtn.addEventListener("click", () => {
     document.execCommand("bold")
 })
@@ -42,15 +43,3 @@ pdfBtn.addEventListener('click', () => {
     // eslint-disable-next-line no-undef
     html2pdf().from(content).save(filename.value)
 })
-class script{
-    boldBtn;
-    underlineBtn;
-    italicBtn;
-    colorBtn;
-    newBtn;
-    txtBtn;
-    pdfBtn;
-    content;
-    filename;
-}
-export default new script();

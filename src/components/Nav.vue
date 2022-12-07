@@ -92,9 +92,24 @@ h1, h2, h3, h4, h5, h6 {
 </style>
 
 <script>
+/*import {onMounted, ref} from 'axios'
+import axios from 'axios'*/
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Nav"
+  name: "Nav",
+  /*setup() {
+    const auth = ref(false);
+    onMounted(async () =>{
+      try
+      {
+        await axios.get('http://localhost:8080/api/user');
+        auth.value = true;
+      }catch(e){
+        auth.value = false;
+      }
+    });
+  }*/
+
   /*methods: {
     checkScreen() {
       this.windownWidth = window.innerWidth;
